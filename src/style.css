@@ -7,8 +7,7 @@ table {
   border: 1px solid #ddd;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
 }
 
 td,
@@ -19,7 +18,7 @@ th {
 
 td.test {
   text-align: right;
-  width: auto;
+  width: 10px;
 }
 
 td.test2 {
@@ -56,5 +55,39 @@ tr:nth-child(even) {
 .todoinput {
   margin: 7px;
   padding: 10px;
-  width: 92%;
+  width: 95%;
+  border: none;
+  border-radius: 5px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: arial, sans-serif;
+  text-align: left;
+  padding: 10px;
+}
+
+.input-icons i {
+  position: absolute;
+  right: 22%;
+  padding-top: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+ 
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  color: green;
+  min-width: 50px;
+  text-align: center;
 }

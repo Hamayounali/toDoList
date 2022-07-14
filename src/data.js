@@ -1,64 +1,58 @@
-const ToDos = [
-  {
-    description: 'Complete to do list project ',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Wash the dieshes ',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Study all other todays activites ',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Attend morning session meeting ',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Attend Pair programming meeting ',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Participate Standup meeting',
-    completed: true,
-    index: 1,
-  },
-];
+import Todos from './todo';
+
+const todo = new Todos();
+document.querySelector('#newBook').addEventListener('click', todo.input);
+
 const display = () => {
   let html = '<div>';
   html += '<table class="center">';
-  html += '<tr>';
-  html += '<td colspan="3"> <b> Today To Do </b> </td>';
-  html += '</tr>';
-  html += '<tr>';
-  html += `<td colspan="3"> 
-  <form>
-    <input type='text' placeholder='Add to your list' class='todoinput'>
-    </form>
-  </td>`;
-  html += '</tr>';
-  for (let i = 0; i < ToDos.length; i += 1) {
+  const storedTodos = JSON.parse(localStorage.getItem('todoLocal'));
+  for (let i = 0; i < storedTodos.length; i += 1) {
+    const test = "abc";
+    todo.todoArr.push({ description: storedTodos[i].description, completed: storedTodos[i].completed, index: storedTodos[i].index });
     html += '<tr>';
     html += `<td class='test3'> 
     <form>
       <input type='checkbox' name='todoForm' value='true'>
       </form>
     </td>`;
-    html += `<td class='test2'> ${ToDos[i].description} </td>`;
-    html += '<td class="test"><button class="btn"> &#10247; </button> </td>';
+    html += `<td class='test2'> ${todo.todoArr[i].description} </td>`;
+    html += `<td class="test"><button onclick="editTodo(${i}, '${todo.todoArr[i].description}')" class="btn"> <i class="fa fa-edit" style="font-size:20px"></i> </button> </td>`;
+    html += `<td class="test"><button onclick="deleteTodo(${i})" class="btn"> <i class="fa fa-trash" style="font-size:20px"></i> </button> </td>`;
     html += '</tr>';
   }
   html += '<tr>';
-  html += '<td colspan="3" class="clearButton"> <b> Clear all completed </b> </td>';
+  html += '<td colspan="4" class="clearButton"> <b> Clear all completed </b> </td>';
   html += '</tr>';
   html += '</table>';
   document.getElementById('data').innerHTML = html;
 };
 
 export default display;
+
+window.deleteTodo = (i) => {
+  todo.todoArr.splice(i, 1);
+  localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
+  window.location.reload();
+};
+
+window.editTodo = (i, b) => {
+  const toUpdate = JSON.parse(localStorage.getItem('todoLocal'));
+  for (let i = 0; i < toUpdate.length; i += 1) {
+      if(todo.todoArr[i].description===b){
+        let data = todo.todoArr[i].description;
+        myFunction(i, data)
+      }
+  }
+  window.location.reload();
+};
+
+function myFunction(i, data) {
+  let updated = prompt("You can update the to do:", data);
+  if (updated == null || updated == "") {
+    return true;
+  } else {
+    todo.todoArr[i].description = updated;
+    localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
+  }
+}
