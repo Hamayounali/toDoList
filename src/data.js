@@ -34,7 +34,7 @@ const display = () => {
   let html = '<div>';
   html += '<table class="center">';
   html += '<tr>';
-  html += `<td colspan='3'> <b> Today To Do </b> </td>`;
+  html += '<td colspan="3"> <b> Today To Do </b> </td>';
   html += '</tr>';
   for (let i = 0; i < ToDos.length; i += 1) {
     html += '<tr>';
@@ -44,11 +44,11 @@ const display = () => {
       </form>
     </td>`;
     html += `<td class='test2'> ${ToDos[i].description} </td>`;
-    html += `<td class='test'><button class='btn'> &#10247; </button> </td>`;
+    html += '<td class="test"><button class="btn"> &#10247; </button> </td>';
     html += '</tr>';
   }
   html += '<tr>';
-  html += `<td colspan='3' class='clearButton'> <b> Clear all completed </b> </td>`;
+  html += '<td colspan="3" class="clearButton"> <b> Clear all completed </b> </td>';
   html += '</tr>';
   html += '</table>';
   document.getElementById('data').innerHTML = html;
