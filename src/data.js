@@ -32,7 +32,7 @@ const ToDos = [
 ];
 const display = () => {
   let html = '<div>';
-  html += `<table class='center'>`;
+  html += '<table class="center">';
   html += '<tr>';
   html += `<td colspan='3'> <b> Today To Do </b> </td>`;
   html += '</tr>';
