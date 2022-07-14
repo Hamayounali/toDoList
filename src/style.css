@@ -8,8 +8,9 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-  
+
 td,
 th {
   text-align: left;
@@ -47,11 +48,7 @@ tr:nth-child(even) {
 }
 
 .btn {
-  background-color: rgba(255, 255, 255,0.1);
-  border: 0px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
   cursor: pointer;
-}
-
-table {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
