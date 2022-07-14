@@ -32,15 +32,15 @@ const ToDos = [
 ];
 const display = () => {
   let html = '<div>';
-  html += '<table class="center">';
+  html += `<table class='center'>`;
   html += '<tr>';
   html += `<td colspan='3'> <b> Today's To Do </b> </td>`;
   html += '</tr>';
   for (let i = 0; i < ToDos.length; i += 1) {
     html += '<tr>';
-    html += `<td class="test3"> 
+    html += `<td class='test3'> 
     <form>
-      <input type="checkbox" name="vehicle1" value="Bike">
+      <input type='checkbox' name='vehicle1' value='Bike'>
       </form>
     </td>`;
     html += `<td class='test2'> ${ToDos[i].description} </td>`;
@@ -48,7 +48,7 @@ const display = () => {
     html += '</tr>';
   }
   html += '<tr>';
-  html += `<td colspan='3' class="clearButton"> <b> Clear all completed </b> </td>`;
+  html += `<td colspan='3' class='clearButton'> <b> Clear all completed </b> </td>`;
   html += '</tr>';
   html += '</table>';
   document.getElementById('data').innerHTML = html;
