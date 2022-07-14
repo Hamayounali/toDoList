@@ -6,10 +6,9 @@ document.querySelector('#newBook').addEventListener('click', todo.input);
 const display = () => {
   let html = '<div>';
   html += '<table class="center">';
-  const storedTodos = JSON.parse(localStorage.getItem('todoLocal'));
-  for (let i = 0; i < storedTodos.length; i += 1) {
-    const test = "abc";
-    todo.todoArr.push({ description: storedTodos[i].description, completed: storedTodos[i].completed, index: storedTodos[i].index });
+  const st = JSON.parse(localStorage.getItem('todoLocal'));
+  for (let i = 0; i < st.length; i += 1) {
+    todo.todoArr.push({ description: st[i].description, completed: st[i].completed, index: st[i].index });
     html += '<tr>';
     html += `<td class='test3'> 
     <form>
@@ -36,23 +35,24 @@ window.deleteTodo = (i) => {
   window.location.reload();
 };
 
-window.editTodo = (i, b) => {
-  const toUpdate = JSON.parse(localStorage.getItem('todoLocal'));
-  for (let i = 0; i < toUpdate.length; i += 1) {
-      if(todo.todoArr[i].description===b){
-        let data = todo.todoArr[i].description;
-        myFunction(i, data)
-      }
-  }
-  window.location.reload();
-};
-
 function myFunction(i, data) {
-  let updated = prompt("You can update the to do:", data);
-  if (updated == null || updated == "") {
+  let updated = prompt('You can update the to do:', data);
+  if (updated === null || updated === "") {
     return true;
   } else {
     todo.todoArr[i].description = updated;
     localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
   }
+  return true;
 }
+
+window.editTodo = (i, b) => {
+  const toUpdate = JSON.parse(localStorage.getItem('todoLocal'));
+  for (let i = 0; i < toUpdate.length; i += 1) {
+    if (todo.todoArr[i].description === b) {
+      const data = todo.todoArr[i].description;
+      myFunction(i, data);
+    }
+  }
+  window.location.reload();
+};
