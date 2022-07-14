@@ -1,8 +1,8 @@
-# To Dos List 
+# To Do List 
 Online to to list application 
 
-## To dos list screen shot
-
+## To do list screen shot
+<img width="585" alt="todo" src="https://user-images.githubusercontent.com/22744775/178933348-dd954390-00e2-4e26-845c-aee2b778328d.PNG">
 
 ## Page Link 
 https://hamayounali.github.io/atoDoList/
