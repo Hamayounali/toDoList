@@ -8,7 +8,7 @@ const display = () => {
   html += '<table class="center">';
   const st = JSON.parse(localStorage.getItem('todoLocal'));
   for (let i = 0; i < st.length; i += 1) {
-    todo.todoArr.push({ description: st[i].description, completed: st[i].completed, index: st[i].index });
+    todo.todoArr.push({ description: st[i].description, completed: st[i].completed });
     html += '<tr>';
     html += `<td class='test3'> 
     <form>
@@ -36,9 +36,8 @@ window.deleteTodo = (i) => {
 };
 
 function myFunction(i, data) {
-  let updated = prompt('You can update the to do:', data);
-  if (updated === null || updated === "") {
-    return true;
+  const updated = prompt('You can update the to do:', data);
+  if (updated === null || updated === '') {
   } else {
     todo.todoArr[i].description = updated;
     localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
