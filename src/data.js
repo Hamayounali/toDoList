@@ -20,12 +20,12 @@ const ToDos = [
     index: 1,
   },
   {
-    description: 'Attend peer programing meeting ',
+    description: 'Attend Pair programming meeting ',
     completed: true,
     index: 1,
   },
   {
-    description: 'Participate Stand up meeting',
+    description: 'Participate Standup meeting',
     completed: true,
     index: 1,
   },
@@ -36,11 +36,18 @@ const display = () => {
   html += '<tr>';
   html += '<td colspan="3"> <b> Today To Do </b> </td>';
   html += '</tr>';
+  html += '<tr>';
+  html += `<td colspan="3"> 
+  <form>
+    <input type='text' placeholder='Add to your list' class='todoinput'>
+    </form>
+  </td>`;
+  html += '</tr>';
   for (let i = 0; i < ToDos.length; i += 1) {
     html += '<tr>';
     html += `<td class='test3'> 
     <form>
-      <input type='checkbox' name='vehicle1' value='Bike'>
+      <input type='checkbox' name='todoForm' value='true'>
       </form>
     </td>`;
     html += `<td class='test2'> ${ToDos[i].description} </td>`;
