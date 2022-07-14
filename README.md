@@ -1,5 +1,5 @@
 # To Do List 
-Online to to list application 
+Online To Do list application is used to store the daily activities. Every activities can be marked as completed, update and delete. 
 
 ## To do list screen shot
 <img width="585" alt="todo" src="https://user-images.githubusercontent.com/22744775/178933348-dd954390-00e2-4e26-845c-aee2b778328d.PNG">
