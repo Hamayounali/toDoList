@@ -27,12 +27,13 @@ const display = () => {
   document.getElementById('data').innerHTML = html;
 
   //To mark to dos complete
-  for(let i = 0; i < st.length ; i ++){
-    if(todo.todoArr[i].completed === true){
-    const check = document.getElementsByClassName('myCheck');
-    const collection = document.getElementsByClassName('test2');
-    collection[i].style.textDecoration = 'line-through';
-    check[i].checked= true;
+  
+  for(let i = 0; i < st.length; i +=1 ) {
+    if (todo.todoArr[i].completed === true) {
+      const check = document.getElementsByClassName('myCheck');
+      const collection = document.getElementsByClassName('test2');
+      collection[i].style.textDecoration = 'line-through';
+      check[i].checked = true;
     }
   }
 };
@@ -77,12 +78,12 @@ window.changed = (i, b) => {
 window.clearCompleted = () => {
   const st2 = JSON.parse(localStorage.getItem('todoLocal'));
   const len = st2.length;
-  for( let j = 0; j < len ; j += 1){
+  for (let j = 0; j < len; j += 1) {
     if (todo.todoArr[j].completed === true) {
       todo.todoArr.splice(j, 1);
-      j--;
+      j -= 1;
       localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
       window.location.reload();
     }
-  }   
-}
+  }
+};
