@@ -37,8 +37,8 @@ window.deleteTodo = (i) => {
 
 function myFunction(i, data) {
   const updated = prompt('You can update the to do:', data);
-    todo.todoArr[i].description = updated;
-    localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
+  todo.todoArr[i].description = updated;
+  localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));
   return true;
 }
 
