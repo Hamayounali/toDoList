@@ -39,6 +39,7 @@ function myFunction(i, data) {
   const updated = prompt('You can update the to do:', data);
   if (updated === null || updated === '') {
     const text = 'No updated';
+    return text;
   } else {
     todo.todoArr[i].description = updated;
     localStorage.setItem('todoLocal', JSON.stringify(todo.todoArr));

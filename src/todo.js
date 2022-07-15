@@ -1,6 +1,6 @@
 class Todos {
     todoArr = [];
-  
+
     input = () => {
       const description = document.getElementById('description').value;
       const completed = false;
@@ -8,7 +8,7 @@ class Todos {
       localStorage.setItem('todoLocal', JSON.stringify(this.todoArr));
       window.location.reload();
     };
-  }
-  
-  export default Todos;
+}
+
+export default Todos;
   
