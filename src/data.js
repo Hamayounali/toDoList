@@ -25,7 +25,7 @@ const display = () => {
   html += '</tr>';
   html += '</table>';
   document.getElementById('data').innerHTML = html;
- 
+
   for (let i = 0; i < st.length; i += 1) {
     if (todo.todoArr[i].completed === true) {
       const check = document.getElementsByClassName('myCheck');
