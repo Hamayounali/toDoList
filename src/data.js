@@ -25,10 +25,8 @@ const display = () => {
   html += '</tr>';
   html += '</table>';
   document.getElementById('data').innerHTML = html;
-
-  //To mark to dos complete
-  
-  for(let i = 0; i < st.length; i +=1 ) {
+ 
+  for (let i = 0; i < st.length; i += 1) {
     if (todo.todoArr[i].completed === true) {
       const check = document.getElementsByClassName('myCheck');
       const collection = document.getElementsByClassName('test2');
