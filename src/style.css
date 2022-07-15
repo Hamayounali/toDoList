@@ -24,6 +24,8 @@ td.test {
 td.test2 {
   text-align: left;
   width: 400px;
+  /* color: red;
+  text-decoration: line-through; */
 }
 
 td.test3 {
@@ -86,7 +88,6 @@ tr:nth-child(even) {
 
 .icon {
   padding: 10px;
-  color: green;
   min-width: 50px;
   text-align: center;
 }
