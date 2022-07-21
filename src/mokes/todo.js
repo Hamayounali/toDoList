@@ -15,5 +15,5 @@ module.exports = class Todos {
       if (this.todoArr.length === 0) {
         return 'to do deleted successfully';
       }
-      };
+    };
 };
