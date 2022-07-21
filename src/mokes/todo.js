@@ -8,6 +8,7 @@ module.exports = class Todos {
       if (this.todoArr.length > 0) {
         return 'to do added successfully';
       }
+      return true;
     };
 
     deleteTodo = () => {
@@ -15,5 +16,6 @@ module.exports = class Todos {
       if (this.todoArr.length === 0) {
         return 'to do deleted successfully';
       }
+      return true;
     };
 };
