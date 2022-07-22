@@ -28,8 +28,8 @@ module.exports = class Todos {
 
     clearCompleted = () => {
       for (let j = 0; j < this.todoArr.length; j += 1) {
-        if (this.todo.todoArr[j].completed === true) {
-          this.todo.todoArr.splice(j, 1);
+        if (this.todoArr[j].completed === true) {
+          this.todoArr.splice(j, 1);
           j -= 1;
         }
       }
